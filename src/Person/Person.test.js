@@ -8,8 +8,29 @@ import Person from './Person';
 configure({adapter: new Adapter()});
 
 describe("<Person />", () => {
-  it('Returns something', () => {
-    const wrapper = shallow(<Person />);
-    expect(wrapper.matchesElement(<p>I'm a person React Component!</p>)).toEqual(true);
+    let wrapper;
+
+    beforeEach(() => {
+        wrapper = shallow(<Person />);
+    });
+
+  it('Returns <p> with static text', () => {
+    expect(wrapper.containsAnyMatchingElements([<p>Hey! I'm a React Component!</p>])).toEqual(true);
+  });
+
+  it('Returns name:Jim who\'s 30 years old', () => {
+    wrapper.setProps({
+        name:"Jim",
+        age:30
+    });
+    expect(wrapper.containsAnyMatchingElements([<p>My name is Jim and I am 30 years old.</p>])).toEqual(true);
+  });
+
+  it('Returns name:Jane who\'s 26 years old', () => {
+    wrapper.setProps({
+        name:"Jane",
+        age:26
+    });
+    expect(wrapper.containsAnyMatchingElements([<p>My name is Jane and I am 26 years old.</p>])).toEqual(true);
   });
 });
