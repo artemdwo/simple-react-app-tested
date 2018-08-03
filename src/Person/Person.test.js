@@ -33,4 +33,16 @@ describe("<Person />", () => {
     });
     expect(wrapper.containsAnyMatchingElements([<p>My name is Jane and I am 26 years old.</p>])).toEqual(true);
   });
+
+  it('Returns name:John who\'s 22 years old and likes to do nothing', () => {
+    wrapper.setProps({
+        name:"John",
+        age:22,
+        children:"I like to do nothing!"
+    });
+    expect(wrapper.containsAnyMatchingElements([
+        <p>My name is John and I am 22 years old.</p>,
+        <p>I like to do nothing!</p>
+    ])).toEqual(true);
+  });
 });
