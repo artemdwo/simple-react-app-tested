@@ -8,14 +8,26 @@ import Person from './Person/Person'
 
 // Main (root) components
 class App extends Component {
+
+  state = {
+    persons: [
+      { name:"John", age:30 },
+      { name:"Jim", age:28, desc:"I like to do nothing!"},
+      { name:"Jane", age:26 }
+    ]
+  }
+
   render() {
     return (
       <div className="App">
         <h1>Hello there!</h1>
         <p>This is working! :)</p>
-        <Person name="John" age="30" />
-        <Person name="Jim" age="28" >I like to do nothing!</Person>
-        <Person name="Jane" age="26" />
+        <hr/>
+          <button>Switch names</button>
+        <hr/>
+        <Person name={this.state.persons[0].name} age={this.state.persons[0].age} />
+        <Person name={this.state.persons[1].name} age={this.state.persons[1].age} >{this.state.persons[1].desc}</Person>
+        <Person name={this.state.persons[2].name} age={this.state.persons[2].age} />
       </div>
     );
   }
