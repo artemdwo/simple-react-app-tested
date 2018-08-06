@@ -33,7 +33,7 @@ class App extends Component {
         <h1>Hello there!</h1>
         <p>This is working! :)</p>
         <hr/>
-          <button onClick={this.swithNameHandler.bind(this, 'NoName')}>Switch names</button>
+          <button onClick={() => this.swithNameHandler('Superman')}>Switch names</button>
         <hr/>
         <Person 
           name={this.state.persons[0].name} 
