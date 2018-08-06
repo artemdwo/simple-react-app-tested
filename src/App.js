@@ -17,17 +17,34 @@ class App extends Component {
     ]
   }
 
+  swithNameHandler = () => {
+    this.setState({
+      persons: [
+        { name:"Jonny", age:31 },
+        { name:"Jimmy", age:28, desc:"I like to do nothing!"},
+        { name:"Jannie", age:22 }
+      ]
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <h1>Hello there!</h1>
         <p>This is working! :)</p>
         <hr/>
-          <button>Switch names</button>
+          <button onClick={this.swithNameHandler}>Switch names</button>
         <hr/>
-        <Person name={this.state.persons[0].name} age={this.state.persons[0].age} />
-        <Person name={this.state.persons[1].name} age={this.state.persons[1].age} >{this.state.persons[1].desc}</Person>
-        <Person name={this.state.persons[2].name} age={this.state.persons[2].age} />
+        <Person 
+          name={this.state.persons[0].name} 
+          age={this.state.persons[0].age} />
+        <Person 
+          name={this.state.persons[1].name} 
+          age={this.state.persons[1].age} 
+          clickRef={this.swithNameHandler}>{this.state.persons[1].desc}</Person>
+        <Person 
+          name={this.state.persons[2].name} 
+          age={this.state.persons[2].age} />
       </div>
     );
   }
