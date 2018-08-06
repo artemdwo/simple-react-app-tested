@@ -20,9 +20,19 @@ class App extends Component {
   swithNameHandler = (newName) => {
     this.setState({
       persons: [
-        { name:newName, age:31 },
-        { name:"Jimmy", age:28, desc:"I like to do nothing!"},
-        { name:"Jannie", age:22 }
+        { name: newName, age: 31 },
+        { name: "Jimmy", age: 28, desc:"I like to do nothing!"},
+        { name: "Jannie", age: 22 }
+      ]
+    })
+  }
+
+  nameChangedHandler = (event) => {
+    this.setState({
+      persons: [
+        { name: "John", age: 31 },
+        { name: event.target.value, age: 28, desc: "I like to do nothing!"},
+        { name: "Jannie", age: 22 }
       ]
     })
   }
@@ -42,7 +52,8 @@ class App extends Component {
         <Person 
           name={this.state.persons[1].name} 
           age={this.state.persons[1].age} 
-          clickRef={this.swithNameHandler.bind(this, 'Jakkie')}>{this.state.persons[1].desc}</Person>
+          clickRef={this.swithNameHandler.bind(this, 'Jakkie')}
+          changedRef={this.nameChangedHandler}>{this.state.persons[1].desc}</Person>
         <Person 
           name={this.state.persons[2].name} 
           age={this.state.persons[2].age} />

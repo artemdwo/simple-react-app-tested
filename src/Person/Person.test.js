@@ -45,4 +45,8 @@ describe("<Person />", () => {
         <p>I like to do nothing!</p>
     ])).toEqual(true);
   });
+
+  it('Returns input element', () => {
+    expect(wrapper.containsAnyMatchingElements([<input type="text"/>])).toEqual(true);
+  });
 });
