@@ -17,10 +17,10 @@ class App extends Component {
     ]
   }
 
-  swithNameHandler = () => {
+  swithNameHandler = (newName) => {
     this.setState({
       persons: [
-        { name:"Jonny", age:31 },
+        { name:newName, age:31 },
         { name:"Jimmy", age:28, desc:"I like to do nothing!"},
         { name:"Jannie", age:22 }
       ]
@@ -33,15 +33,16 @@ class App extends Component {
         <h1>Hello there!</h1>
         <p>This is working! :)</p>
         <hr/>
-          <button onClick={this.swithNameHandler}>Switch names</button>
+          <button onClick={this.swithNameHandler.bind(this, 'NoName')}>Switch names</button>
         <hr/>
         <Person 
           name={this.state.persons[0].name} 
-          age={this.state.persons[0].age} />
+          age={this.state.persons[0].age} 
+          clickRef={this.swithNameHandler.bind(this, 'Jack')} />
         <Person 
           name={this.state.persons[1].name} 
           age={this.state.persons[1].age} 
-          clickRef={this.swithNameHandler}>{this.state.persons[1].desc}</Person>
+          clickRef={this.swithNameHandler.bind(this, 'Jakkie')}>{this.state.persons[1].desc}</Person>
         <Person 
           name={this.state.persons[2].name} 
           age={this.state.persons[2].age} />
