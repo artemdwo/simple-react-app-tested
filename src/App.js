@@ -38,12 +38,23 @@ class App extends Component {
   }
 
   render() {
+
+    const style = {
+      backgroundColor: 'white',
+      font: 'inherit',
+      border: '1px solid blue',
+      padding: '8px',
+      cursor: 'pointer'
+    }
+
     return (
       <div className="App">
         <h1>Hello there!</h1>
         <p>This is working! :)</p>
         <hr/>
-          <button onClick={() => this.swithNameHandler('Superman')}>Switch names</button>
+          <button 
+            style={style}
+            onClick={() => this.swithNameHandler('Superman')}>Switch names</button>
         <hr/>
         <Person 
           name={this.state.persons[0].name} 
