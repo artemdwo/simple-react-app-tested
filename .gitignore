@@ -5,6 +5,8 @@
 
 # testing
 /coverage
+/cypress/integration/examples
+/cypress/fixtures/example.*
 
 # production
 /build
