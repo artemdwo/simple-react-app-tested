@@ -8,6 +8,7 @@
 /cypress/integration/examples
 /cypress/fixtures/example.*
 /cypress/videos
+/cypress/screenshots
 
 # production
 /build
