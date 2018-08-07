@@ -18,7 +18,7 @@ For UI testing only.
 ### To get the app locally
 ```bash
 # clone the repo
-$ git clone ...
+$ git clone https://github.com/artemdwo/simple-react-app-tested.git
 
 # change directory to the project/directory
 $ cd ~/to/the/project
@@ -29,7 +29,7 @@ $ npm install
 
 ### To run the app
 ```
-$ npm run
+$ npm start
 ```
 
 ### To run component\unit tests
@@ -42,7 +42,7 @@ $ npm test
 
 **Run the app in one terminal**
 ```
-$ npm run
+$ npm start
 ```
 **Run the tests in the different terminal**
 
