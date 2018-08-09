@@ -1,6 +1,6 @@
 describe('Simple app test suite', function() {
     beforeEach(function () {
-        cy.visit('http://localhost:3001/')
+        cy.visit('/')
     })
 
     it('The app has main <div> styled as App class', function() {
