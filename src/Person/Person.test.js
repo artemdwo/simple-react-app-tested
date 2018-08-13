@@ -8,11 +8,11 @@ import Person from './Person';
 configure({adapter: new Adapter()});
 
 describe("<Person />", () => {
-    let wrapper;
+  let wrapper;
 
-    beforeEach(() => {
-        wrapper = shallow(<Person />);
-    });
+  beforeEach(() => {
+      wrapper = shallow(<Person />);
+  });
 
   it('Returns <p> with static text', () => {
     expect(wrapper.containsAnyMatchingElements([<p>Hey! I'm a React Component!</p>])).toEqual(true);
