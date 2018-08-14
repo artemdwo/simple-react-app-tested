@@ -80,13 +80,15 @@ class App extends Component {
       persons = (
         <div>
           {this.state.persons.map((person, index) => {
-            return <Person 
+            return <Person
+              id={person.id}
               key={person.id}
               name={person.name} 
               age={person.age}
               clickRef={() => this.deletePersonHandler(index)} 
               changedRef={(event) => this.nameChangedHandler(event, person.id)} >{person.desc}</Person>
           })}
+          {/* JSX sample has been left for the reference purpose */}
           {/* <Person 
             name={this.state.persons[0].name} 
             age={this.state.persons[0].age} 
@@ -108,10 +110,11 @@ class App extends Component {
         <h1>Hello there!</h1>
         <p>This is working! :)</p>
         <hr/>
-          <button
+          {/* nameSwitcher is not in use anymore */}
+          {/* <button
             id='nameSwitcher'
             style={style}
-            onClick={() => this.swithNameHandler('Superman')}>Switch names</button>
+            onClick={() => this.swithNameHandler('Superman')}>Switch names</button> */}
           <button
             id='personToggler'
             style={style}

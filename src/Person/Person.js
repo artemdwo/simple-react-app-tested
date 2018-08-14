@@ -4,7 +4,7 @@ import './Person.css'
 
 const person = (props) => {
     return (
-        <div className="Person">
+        <div id={props.id} className="Person">
             <p>Hey! I'm a React Component!</p>
             <p onClick={props.clickRef}>My name is {props.name} and I am {props.age} years old.</p>
             <p>{props.children}</p>
