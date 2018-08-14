@@ -32,14 +32,31 @@ class App extends Component {
     this.setState({persons: persons})
   }
 
-  nameChangedHandler = (event) => {
-    this.setState({
-      persons: [
-        { name: "John", age: 31 },
-        { name: event.target.value, age: 28, desc: "I like to do nothing!"},
-        { name: "Jannie", age: 22 }
-      ]
+  nameChangedHandler = (event, id) => {
+    // Find whether id requested is available in the data (state)
+    const personIndex = this.state.persons.findIndex(prsn => {
+      return prsn.id === id
     })
+
+    // Create a copy of the found data (person)
+    const person = {
+      ...this.state.persons[personIndex]
+    }
+
+    // Assign (catch) a new value (name) from the event.target to 
+    // the person found and copied
+    person.name = event.target.value
+
+    // Create a copy of the entire state to avoid direct mutation
+    const persons = [...this.state.persons]
+
+    // Change the updated person data within the copy 
+    // of the state
+    persons[personIndex] = person
+
+    // Save (set) changed data (copy of the state) back to
+    // the original state to take affect
+    this.setState({persons: persons})
   }
 
   togglePersonsHandler = () => {
@@ -67,7 +84,8 @@ class App extends Component {
               key={person.id}
               name={person.name} 
               age={person.age}
-              clickRef={() => this.deletePersonHandler(index)} >{person.desc}</Person>
+              clickRef={() => this.deletePersonHandler(index)} 
+              changedRef={(event) => this.nameChangedHandler(event, person.id)} >{person.desc}</Person>
           })}
           {/* <Person 
             name={this.state.persons[0].name} 
