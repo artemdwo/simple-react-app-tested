@@ -18,16 +18,6 @@ class App extends Component {
     showPersonList: false
   }
 
-  swithNameHandler = (newName) => {
-    this.setState({
-      persons: [
-        { name: newName, age: 31 },
-        { name: "Jimmy", age: 28, desc:"I like to do nothing!"},
-        { name: "Jannie", age: 22 }
-      ]
-    })
-  }
-
   nameChangedHandler = (event) => {
     this.setState({
       persons: [
@@ -57,7 +47,7 @@ class App extends Component {
 
     if ( this.state.showPersonList ) {
       persons = (
-        <div >
+        <div>
           {this.state.persons.map(person => {
             return <Person 
               name={person.name} 
