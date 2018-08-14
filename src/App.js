@@ -19,7 +19,15 @@ class App extends Component {
   }
 
   deletePersonHandler = (index) => {
-    const persons = this.state.persons
+    // Wrong approach due to JS array and object referencing
+    // In current way, the MAIN state array\object is being mutated
+    // const persons = this.state.persons
+
+    // Better way: use slice() to create a copy
+    // const persons = this.state.persons.slice()
+
+    // The best way: to use spread operator [...] "three dots" to create a copy
+    const persons = [...this.state.persons]
     persons.splice(index, 1)
     this.setState({persons: persons})
   }
