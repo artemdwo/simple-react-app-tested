@@ -17,3 +17,12 @@ test ('"Toggle Person list" button is present', async t => {
     .expect(Selector('#personToggler').exists).ok()
     .expect(Selector('#personToggler').textContent).contains('Toggle Persons list')
 })
+
+const AppDiv = Selector('#root>.App>div')
+
+test.only ('The main <div> has 3 <div> children styled with Person class', async t => {
+  await t
+    .click('#personToggler')
+    .expect(AppDiv.child('div').count).eql(3)
+})
+
