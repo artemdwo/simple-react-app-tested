@@ -4,6 +4,8 @@ Simple React application (SPA) created along the training course.
 
 The course itself does not cover testing at this stage. Nevertheless, I've taken an opportunity to follow TDD apporach regarding components development along the course.
 
+[ ![Codeship Status for artemdwo/simple-react-app-tested](https://app.codeship.com/projects/b4a7a5a0-8dd2-0136-303c-32a6f37ce274/status?branch=master)](https://app.codeship.com/projects/303743)
+
 # The main point here is testing
 ## Testing tools
 
@@ -121,7 +123,7 @@ $ npm start
 
 You'd need to update __baseUrl__ with the port, if different from specified __port__ directly in `test` file `../simple-react-app-tested/testcafe/tc_first.test.js` LOC:3 where
 ```javascript
-fixture `homePage` .page `http://localhost:{port}`)
+fixture `homePage` .page `http://localhost:{port}`
 ```
 ---
 *TestCafe JS with Chrome*
@@ -133,5 +135,10 @@ $ npm run test:tc
 ```
 $ npm run test:tc:firefox
 ```
+
+---
+### Alternative baseUrl
+
+You can also run the latest tests against Heroku hosted app on: https://simple-react-app-test.herokuapp.com
 
 # Happy testing and coding!
