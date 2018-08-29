@@ -34,10 +34,10 @@ $ npm start
 
 ### To run component\unit tests
 ```
-$ npm test
+$ npm run test:co
 ```
-
-### To run UI tests
+---
+### To run UI tests with Cypress
 > To run the UI tests, you are going to need the App running. 
 
 **Run the app in one terminal**
@@ -68,17 +68,17 @@ To create a production build, use npm run build.
 }
 ```
 
-**Run the tests in the different terminal**
+**Run the tests in a different terminal**
 
 ---
 *Headless*
 ```
-$ npx cypress run
+$ npm run test:cy
 ```
 ---
 *In Chrome*
 ```
-$ npx cypress run --browser chrome
+$ npm run test:cy:chrome
 ```
 ---
 *Cypress UI*
@@ -86,5 +86,30 @@ $ npx cypress run --browser chrome
 $ npx cypress open
 ```
 Click on `App.spec.js` in the list and you will see it running with all the details.
+
+---
+### To run UI tests with Cucumber
+Ensure you have the App running.
+
+Otherwise, start the server before you proceed: 
+```
+$ npm start
+``` 
+
+You'd need to update __baseUrl__ with the port, if different from specified __port__ directly in __step definition__ file `../simple-react-app-tested/features/step-definitions/app-steps.js` LOC:3 where
+```javascript
+return helpers.loadPage('http://localhost:{port}')
+```
+---
+*Cucumber JS with Chrome*
+```
+$ npm run test:cu
+```
+---
+*Cucumber JS with Firefox*
+```
+$ npm run test:cu:firefox
+```
+---
 
 # Happy testing and coding!
