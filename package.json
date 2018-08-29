@@ -15,6 +15,8 @@
     "test:cy:chrome": "npx cypress run --browser chrome",
     "test:cu": "node ./node_modules/selenium-cucumber-js/index.js",
     "test:cu:firefox": "node ./node_modules/selenium-cucumber-js/index.js  -b firefox",
+    "test:tc": "npx testcafe chrome ./testcafe/*.test.js",
+    "test:tc:firefox": "npx testcafe firefox ./testcafe/*.test.js",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
@@ -25,6 +27,7 @@
     "enzyme-adapter-react-16": "^1.3.0",
     "jest": "^23.5.0",
     "react-test-renderer": "^16.4.2",
-    "selenium-cucumber-js": "^1.6.1"
+    "selenium-cucumber-js": "^1.6.1",
+    "testcafe": "^0.21.1"
   }
 }

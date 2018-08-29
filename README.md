@@ -111,5 +111,27 @@ $ npm run test:cu
 $ npm run test:cu:firefox
 ```
 ---
+### To run UI tests with TestCafe
+Ensure you have the App running.
+
+Otherwise, start the server before you proceed: 
+```
+$ npm start
+``` 
+
+You'd need to update __baseUrl__ with the port, if different from specified __port__ directly in `test` file `../simple-react-app-tested/testcafe/tc_first.test.js` LOC:3 where
+```javascript
+fixture `homePage` .page `http://localhost:{port}`)
+```
+---
+*TestCafe JS with Chrome*
+```
+$ npm run test:tc
+```
+---
+*TestCafe JS with Firefox*
+```
+$ npm run test:tc:firefox
+```
 
 # Happy testing and coding!
