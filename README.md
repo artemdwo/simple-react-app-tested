@@ -133,15 +133,26 @@ fixture `homePage` .page `http://localhost:{port}`
 ```
 ---
 *TestCafe JS with Chrome*
+
+With the browser window
 ```
 $ npm run test:tc
 ```
+In headless mode
+```
+$ npm run test:tc:headless
+```
 ---
 *TestCafe JS with Firefox*
+
+With the browser window
 ```
 $ npm run test:tc:firefox
 ```
-
+In headless mode
+```
+$ npm run test:tc:firefox:headless
+```
 ---
 ### Alternative baseUrl
 
