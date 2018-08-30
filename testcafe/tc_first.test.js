@@ -4,7 +4,7 @@ fixture `homePage` .page `http://localhost:3001`
 
 test('The app has main <div> styled as App class', async t => {
   await t
-    .expect(Selector('#root>div').withAttribute('class', 'App'))
+    .expect(Selector('#root>div').hasClass('App')).ok()
 })
 
 test('The main <div> should not have any <Person> children div\'s by default', async t => {
