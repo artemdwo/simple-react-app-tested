@@ -132,7 +132,7 @@ You'd need to update __baseUrl__ with the port, if different from specified __po
 fixture `homePage` .page `http://localhost:{port}`
 ```
 ---
-*TestCafe JS with Chrome*
+*TestCafe with Chrome*
 
 With the browser window
 ```
@@ -143,7 +143,7 @@ In headless mode
 $ npm run test:tc:headless
 ```
 ---
-*TestCafe JS with Firefox*
+*TestCafe with Firefox*
 
 With the browser window
 ```
@@ -152,6 +152,19 @@ $ npm run test:tc:firefox
 In headless mode
 ```
 $ npm run test:tc:firefox:headless
+```
+---
+*TestCafe has live test execution support*
+
+`npm install testcafe-live --save-dev` (included into `package.json`) will allow you to automatically run\re-run tests whenever you make a change \ save a file.
+
+*... with Chrome*
+```
+$ npm run test:tc:live:chrome
+```
+*... with Firefox*
+```
+$ npm run test:tc:live:firefox
 ```
 ---
 ### Alternative baseUrl
