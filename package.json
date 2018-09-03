@@ -19,6 +19,8 @@
     "test:tc:headless": "npx testcafe 'chrome:headless' ./testcafe/*.test.js",
     "test:tc:firefox": "npx testcafe firefox ./testcafe/*.test.js",
     "test:tc:firefox:headless": "npx testcafe 'firefox:headless' ./testcafe/*.test.js",
+    "test:tc:live:chrome": "npx testcafe-live chrome ./testcafe/*.test.js",
+    "test:tc:live:firefox": "npx testcafe-live firefox ./testcafe/*.test.js",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
@@ -30,6 +32,7 @@
     "jest": "^23.5.0",
     "react-test-renderer": "^16.4.2",
     "selenium-cucumber-js": "^1.6.1",
-    "testcafe": "^0.21.1"
+    "testcafe": "^0.21.1",
+    "testcafe-live": "^0.1.3"
   }
 }
