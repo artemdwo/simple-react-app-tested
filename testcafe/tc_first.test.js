@@ -1,4 +1,4 @@
-import { Selector } from 'testcafe'
+import { Selector, t } from 'testcafe'
 
 fixture `homePage` .page `http://localhost:3001`
 
@@ -25,4 +25,26 @@ test('The main <div> has 3 <div> children styled with Person class', async t => 
     .click('#personToggler')
     .expect(App2DivDown.hasClass('Person')).ok()
     .expect(App2DivDown.count).eql(3)
+})
+
+test('Click on on the middle text of the second card removes the second card', async t => {
+  // second card
+  let targetDiv = 1
+  // second paragraph
+  let clickableP = 1
+  
+  let cardTwo = Selector( index => {
+    let obj = document.querySelectorAll('.App>div>.Person')
+    let arr = Array.prototype.slice.call(obj)
+
+    return arr[index]
+  })
+  
+  await t.click('#personToggler')
+
+  let set = await cardTwo(targetDiv).getAttribute('id')
+
+  await t
+    .click(cardTwo(targetDiv).child(clickableP))
+    .expect(Selector('.App>div>.Person').withAttribute('id', ''+set).count).eql(0)
 })
