@@ -1,6 +1,6 @@
 # Training application on React
 
-Simple React application created as a single page app (SPA) created on a training course, being used as the basis for a test tools comparison playground.
+Simple React application created as a single page app (SPA) created on a training course, being used as the basis for a test tool comparison.
 
 [ ![Codeship Status for artemdwo/simple-react-app-tested](https://app.codeship.com/projects/b4a7a5a0-8dd2-0136-303c-32a6f37ce274/status?branch=master)](https://app.codeship.com/projects/303743)
 
