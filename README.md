@@ -1,8 +1,6 @@
 # Training application on React
 
-Simple React application (SPA) created along the training course.
-
-The course itself does not cover testing at this stage. Nevertheless, I've taken an opportunity to follow TDD approach regarding components development along the course.
+Simple React application created as a single page app (SPA) created on a training course, being used as the basis for a test tools comparison playground.
 
 [ ![Codeship Status for artemdwo/simple-react-app-tested](https://app.codeship.com/projects/b4a7a5a0-8dd2-0136-303c-32a6f37ce274/status?branch=master)](https://app.codeship.com/projects/303743)
 
@@ -15,8 +13,8 @@ For components testing prior the actual development. TDD approach practice along
 ### Cypress
 For UI testing only. No Selenium Webdriver needed.
 
-### Cucumber
-Old good Cucumber for JavaScript.
+### Cucumber + Selenium Webdriver
+Good old Cucumber and Selenium for JavaScript.
 
 ### TestCafe
 For UI testing only. No Selenium Webdriver needed.
