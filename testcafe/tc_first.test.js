@@ -1,6 +1,6 @@
 import { Selector, t } from 'testcafe'
 
-fixture `homePage` .page `http://localhost:3001`
+fixture `homePage` .page `http://localhost:3000`
 
 test('The app has main <div> styled as App class', async t => {
   await t
@@ -23,7 +23,7 @@ const App2DivDown = Selector('.App>div div')
 test('The main <div> has 3 <div> children styled with Person class', async t => {
   await t
     .click('#personToggler')
-    .expect(App2DivDown.hasClass('Person')).ok()
+    .expect(App2DivDown.hasClass('Persons')).ok()
     .expect(App2DivDown.count).eql(3)
 })
 

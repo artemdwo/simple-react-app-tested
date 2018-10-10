@@ -21,17 +21,21 @@
     "test:tc:firefox:headless": "npx testcafe 'firefox:headless' ./testcafe/*.test.js",
     "test:tc:live:chrome": "npx testcafe-live chrome ./testcafe/*.test.js",
     "test:tc:live:firefox": "npx testcafe-live firefox ./testcafe/*.test.js",
+    "test:nw": "node ./node_modules/.bin/nightwatch ./nightwatch/tests/*.test.js",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
     "ajv": "^6.5.3",
     "babel-jest": "^23.4.2",
+    "concurrently": "^4.0.1",
     "cypress": "^3.1.0",
     "enzyme": "^3.5.0",
     "enzyme-adapter-react-16": "^1.3.0",
     "jest": "^23.5.0",
+    "nightwatch": "^0.9.21",
     "react-test-renderer": "^16.4.2",
     "selenium-cucumber-js": "^1.6.1",
+    "selenium-server": "^3.14.0",
     "testcafe": "^0.21.1",
     "testcafe-live": "^0.1.3"
   }
